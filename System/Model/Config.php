@@ -13,7 +13,7 @@ class Config extends Connection
     public function __construct()
     {
         return [
-            $this->initControllerConfig("Startseite", "0", "http://localhost/hubbafever/index"),
+            $this->initControllerConfig("Startseite", "0", "http://localhost/MVC/index"),
             $this->setPDO("localhost", "base", "root", "")
         ];
     }
