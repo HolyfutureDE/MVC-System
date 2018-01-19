@@ -19,11 +19,7 @@ class IndexController extends Handler
 
     public function test()
     {
-
-        $sql = "SELECT * FROM users";
-        $user = $this->connection()->query($sql)->fetch();
-        echo $user['username'];
-
-
+        $this->insert("users", "username", "Jeffrey");
+        echo $this->connection;
     }
 }

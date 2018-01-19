@@ -7,10 +7,10 @@ class Connection
 {
     public $connection;
 
-    public $host;
-    public $database;
-    public $hostuser;
-    public $hostpassword;
+    private $host;
+    private $database;
+    private $hostuser;
+    private $hostpassword;
 
     public function setPDO($host, $database, $hostuser, $hostpassword)
     {
@@ -22,7 +22,7 @@ class Connection
         ];
     }
 
-    public function configPDO()
+    public function initPDO()
     {
         return [
             "host" => $this->host,
@@ -34,7 +34,16 @@ class Connection
 
     public function connection()
     {
-        return $this->connection = new \PDO("mysql:host=".$this->configPDO()["host"].";dbname=".$this->configPDO()["database"]."", $this->configPDO()["hostuser"], $this->configPDO()["hostpassword"]);
+        return new \PDO("mysql:host=".$this->initPDO()["host"].";dbname=".$this->initPDO()["database"]."", $this->initPDO()["hostuser"], $this->initPDO()["hostpassword"]);
+    }
+
+
+
+    public function insert($table, $column, $value)
+    {
+        $stmt = $this->connection()->prepare("INSERT INTO $table ($column) VALUES (:". $value . ")");
+        $stmt->bindParam(":$value", $value);
+        return $this->connection = $stmt->execute();
     }
 
 
