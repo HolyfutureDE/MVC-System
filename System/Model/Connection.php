@@ -12,39 +12,11 @@ class Connection
     private $hostuser;
     private $hostpassword;
 
-    public function setPDO($host, $database, $hostuser, $hostpassword)
+    public function connection($host, $db, $user, $pw)
     {
-        return [
-            $this->host = $host,
-            $this->database = $database,
-            $this->hostuser = $hostuser,
-            $this->hostpassword = $hostpassword
-        ];
+        return new \PDO("mysql:host=".$host.";dbname=".$db."", $user, $pw);
     }
 
-    public function initPDO()
-    {
-        return [
-            "host" => $this->host,
-            "database" => $this->database,
-            "hostuser" => $this->hostuser,
-            "hostpassword" => $this->hostpassword
-        ];
-    }
-
-    public function connection()
-    {
-        return new \PDO("mysql:host=".$this->initPDO()["host"].";dbname=".$this->initPDO()["database"]."", $this->initPDO()["hostuser"], $this->initPDO()["hostpassword"]);
-    }
-
-
-
-    public function insert($table, $column, $value)
-    {
-        $stmt = $this->connection()->prepare("INSERT INTO $table ($column) VALUES (:". $value . ")");
-        $stmt->bindParam(":$value", $value);
-        return $this->connection = $stmt->execute();
-    }
 
 
 }

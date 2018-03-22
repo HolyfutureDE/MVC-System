@@ -11,7 +11,7 @@ class ErrorController extends Handler
 
     public function __construct()
     {
-        $this->initControllerConfig("Error", "0", "http://localhost/hubbafever/error");
+        $this->initControllerConfig("Error", "0","");
     }
 
     public function onRequest()

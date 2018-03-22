@@ -13,16 +13,15 @@ class View extends Config
         $request = "www/template/" . $request . ".tpl.php";
         if(file_exists($request)){
             return [
-                require "../MVC/www/template/header/Header.tpl.php",
                 require $request,
-                require "../MVC/www/template/footer/Footer.tpl.php",
+                require "../habboaf/www/template/footer/Footer.tpl.php",
             ];
         }
     }
 
     public function getCSS($request)
     {
-        $request = "/MVC/www/public/css/" . $request . ".css";
+        $request = "/habboaf/www/public/css/" . $request . ".css";
         echo '<link rel="stylesheet" href= "' . $request . '">';
         return true;
     }

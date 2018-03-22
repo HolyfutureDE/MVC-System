@@ -2,40 +2,21 @@
 
 namespace App\Controller;
 
-use System\Model\Login;
 use System\Model\Register;
 use System\View\Handler;
 
-class IndexController extends Handler
+class RegisterController extends Handler
 {
-
-    //ToDo Config: Global Config
     public function onRequest()
     {
-        $this->initControllerConfig("Habbo - eine Welt voller freude!", "0", "0", "");
+        $this->initControllerConfig("Habbo: Registrier dich völlig kostenlos und ohne Probleme!", "0", "0");
         $this->setPermission();
 
-        $this->addView("index/Index");
+        $this->addView("register/Register");
     }
 
-    public function checkLogin($username, $password)
+    public function checkRegister($username, $password, $repassword, $mail)
     {
-        if(!empty($username) AND !empty($password)){
-            if(filter_var($username, FILTER_VALIDATE_EMAIL)){
-                if(strlen($username) <= 30 AND strlen($username) > 3){
-                    $checkData = new Login();
-                    return $checkData->checkValidData($username, hash("sha256", $password));
-                }
-            } elseif(strlen($username) <= 14 AND strlen($username) >= 2) {
-                $checkData = new Login();
-                return $checkData->checkValidData($username, hash("sha256", $password));
-            }
-        }
-    }
-
-    public function checkRegister($username, $mail, $code, $password, $repassword)
-    {
-        echo "hey";
         if (!empty($username) AND !empty($password) AND !empty($repassword) AND !empty($mail)) {
             if (!preg_match("/^([0-9]+)$/", $username)) {
                 if (hash("sha256", $password) == hash("sha256", $repassword)) {
@@ -64,5 +45,11 @@ class IndexController extends Handler
         }
 
         return null;
+    }
+
+    public function test()
+    {
+
+
     }
 }

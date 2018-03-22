@@ -1,0 +1,274 @@
+#header > #logo {
+    width: 240px;
+    height: 140px;
+    background-color: #0767b2;
+    float: left;
+    position: relative;
+}
+
+#header > #logo > .logo {
+    height: 200px;
+    margin-top: -30px;
+    margin-left: 8%;
+}
+
+#header > #menu {
+    width: calc(100% - 240px);
+    height: 60px;
+    background-color: #222222;
+    color: #fff;
+    overflow: hidden;
+}
+
+.right {
+    float: right;
+}
+
+.right ul li {
+    padding: 0 30px;
+    height: 60px;
+    line-height: 60px;
+    box-shadow: -1px 0 rgba(255, 255, 255, 0.06);
+    float: left;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.register {
+    border: none;
+    background-color: #43AF0A;
+    background-image: linear-gradient(to bottom, #60CC03, #43AF0A);
+    padding: 0 32px;
+    padding-left: 60px;
+    height: 60px;
+    box-shadow: inset 0 -30px rgba(0, 0, 0, 0.06);
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    float: right;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.online {
+    padding: 20px;
+    float: left;
+}
+
+.onlineCounter {
+    color: #fff;
+    padding-top: 20px;
+}
+
+#header > #subMenu {
+    width: calc(100% - 240px);
+    height: 80px;
+    background-color: #343434;
+    box-shadow: inset 0 -40px rgba(34, 34, 34, 0.1);
+    overflow: hidden;
+}
+
+#header > #subMenu ul li a {
+    color: #858585;
+    height: 80px;
+}
+
+#header > #subMenu ul li a:hover {
+    transition: all 0.2s;
+    color: #fff;
+}
+
+#header > #subMenu ul li {
+    font-size: 16px;
+    float: left;
+    padding: 0 50px;
+    line-height: 80px;
+    height: 80px;
+    box-shadow: 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.body {
+    width: 50%;
+    background-color: #fff;
+    padding: 10px;
+    z-index: 1;
+}
+
+#registerBody {
+    width: 50%;
+    background-color: #fff;
+    padding: 10px;
+    z-index: 1;
+}
+
+.container > .indexSubTitle {
+    text-transform: uppercase;
+    color: #888888;
+    font-size: 13px;
+    position: relative;
+}
+
+.formContent {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.indexInput {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0 20px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    color: #666;
+    transition: all 0.2s;
+    height: 56px;
+    border-radius: 3px;
+    z-index:2;
+}
+
+.logIn {
+    background-image: linear-gradient(to bottom, #0984e3, #0868b2);
+    width: 140px;
+    font-size: 14px;
+    float: left;
+    border: none;
+    height: 60px;
+    padding: 0;
+    margin: 5px 0;
+    border-radius: 4px;
+    font-family: 'Rubik', sans-serif;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.facebookLogIn {
+    background-color: #3559A0;
+    background-image: linear-gradient(to bottom, #4F78B9, #3559A0);
+    width: 300px;
+    float: right;
+    border: none;
+    height: 60px;
+    padding: 0;
+    margin: 5px 0;
+    border-radius: 4px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.formContent > .logIn:hover {
+    opacity: 0.8;
+    transition: all 0.2s;
+}
+
+.formContent > .facebookLogIn:hover {
+    opacity: 0.8;
+    transition: all 0.2s;
+}
+
+#bodyftr {
+    width: 50%;
+    background-color: #F1F1F1;
+    padding: 10px;
+}
+
+.footer ul li a {
+    margin-top: 40px;
+    color: #666666;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 27px;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}
+
+.umbrella {
+    z-index: -99;
+    background-image: url("../images/umbrella.png");
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: -270px;
+    left: calc(50% - -170px);
+    animation-name: spin;
+    -webkit-animation-duration: 10000ms;
+    -moz-animation-duration: 10000ms;
+    -o-animation-duration: 10000ms;
+    animation-duration: 10000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rBodyContent {
+    text-align:center;
+}
+
+.rBodyContent h4 {
+    color:#fff;
+    text-shadow:0 1px 2px rgba(0,0,0,0.2);
+    font-size:26px;
+    margin-top:96px;
+}
+
+.rBodyContent p {
+    color:#fff;
+    text-shadow:0 1px 2px rgba(0,0,0,0.2);
+}
+
+.closeRegister {
+    display:block;
+    height:50px;
+    width:120px;
+    color:#AAAAAA;
+    background-color: #F1F1F1;
+    border:none;
+    border-radius:3px;
+    float:left;
+    transition: all 0.2s;
+}
+
+.closeRegister:hover {
+    opacity:0.6;
+}
+
+.registerStep2 {
+    color:#fff;
+    float:right;
+    display:block;
+    height:50px;
+    width:120px;
+    background-image: linear-gradient(to bottom,#60CC03,#329F0E);
+    border:none;
+    border-radius:3px;
+    line-height:50px;
+    font-size:16px;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.registerStep2:hover {
+    opacity:0.6;
+}

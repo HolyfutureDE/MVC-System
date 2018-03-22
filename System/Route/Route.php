@@ -16,7 +16,10 @@ class Route
     {
 
         // url wird gefiltert und zum array konvertiert
+        //$url = explode("/", rtrim($this->_url, "/"));
+        $url = preg_replace('/[^\p{L}\p{N} ]/u', "", $this->_url);
         $url = explode("/", rtrim($this->_url, "/"));
+
 
         // übergebe den ersten wert des arrays $url an getController
         $controller = $this->getController($url[0]);
@@ -44,7 +47,6 @@ class Route
 
         $params = array_splice($url, $urlOffset);
         $controller->$method($params);
-
     }
 
     public function getController($controllerName)
@@ -67,11 +69,20 @@ class Route
             $controller->$methodName();
         } else {
             $url = rtrim($url, $methodName);
-            header("Location: /hubbafever/error");
+            header("Location: /habboaf/error");
             return $this->getController("error");
         }
+        return null;
 
+        /*
+        if(method_exists($controller, $methodName)){
+            $controller->$methodName();
+        } else {
+            $url = rtrim($url, $methodName);
+            header("Location: /habboaf/error");
+            return $this->getController("error");
+        }
+        return null;
+        */
     }
-
-
 }

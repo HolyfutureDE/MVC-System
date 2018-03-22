@@ -17,4 +17,9 @@ class Handler extends View
         return $this->getCSS($request);
     }
 
+    public function getConnection()
+    {
+        return $this->connection("localhost", "base", "root", "");
+    }
+
 }

@@ -1,0 +1,6 @@
+body { background-image:url("../images/maintenance bg.png"); }
+
+.container { margin-top:110px!important; }
+
+
+span.content { color:#fff; font-weight:bold; text-shadow:1px 1px 1px black; font-size:19px; }
